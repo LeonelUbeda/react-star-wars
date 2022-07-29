@@ -1,5 +1,6 @@
 import { useNavigate } from "react-router-dom";
 import Card from "../components/Card";
+import Loading from "../components/common/Loading";
 import ResponsiveList from "../components/ResponsiveList";
 import useMovies from "../hooks/useMovies";
 import { getMovieDetailURL } from "../utils/urls";
@@ -9,7 +10,7 @@ const Home = () => {
   const navigate = useNavigate();
   return (
     <div className="px-2">
-      {isLoading && <h1>Loading</h1>}
+      <Loading isLoading={isLoading} />
       {movies && (
         <ResponsiveList>
           {movies.map((movie) => (

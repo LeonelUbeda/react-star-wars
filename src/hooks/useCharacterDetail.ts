@@ -34,7 +34,6 @@ const useCharacterDetail = ({
       setIsLoading(true);
       fetchAPI<CharacterT>(`people/${parsedID}`)
         .then((data) => {
-          console.log(data, "siuuu");
           setCurrent(data);
           setCharacters((state) => [...state, data]);
         })
